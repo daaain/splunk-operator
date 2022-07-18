@@ -349,3 +349,20 @@ clean: stop_clair_scanner
 
 cleanup: 
 	@./tools/cleanup.sh
+
+
+CHART_DIRECTORY := helm-chart/splunk-operator
+HELM_VERSION := 3.3.4
+HELM_IN_DOCKER := docker run --rm -v ${PWD}:/apps alpine/helm:$(HELM_VERSION)
+
+helm_lint:
+	$(HELM_IN_DOCKER) lint ./$(CHART_DIRECTORY)
+
+helm_template:
+	$(HELM_IN_DOCKER) template ./$(CHART_DIRECTORY)
+
+helm_package:
+	$(HELM_IN_DOCKER) package ./$(CHART_DIRECTORY) --destination docs
+	$(HELM_IN_DOCKER) repo index docs --url https://daaain.github.io/splunk-operator
+
+.PHONY: helm_lint helm_template helm_package
