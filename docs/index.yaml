@@ -3,11 +3,11 @@ entries:
   splunk-operator:
   - apiVersion: v1
     appVersion: 1.16.0
-    created: "2022-07-18T14:40:48.220112418Z"
+    created: "2022-07-18T15:39:36.037463663Z"
     description: A Helm chart for Kubernetes
-    digest: f08aa5f2b1a5f19cfd18c528041fd1167509bca6ba7c031eeacee20a504a48a6
+    digest: fec800338e08c32053f66754692832d78c47d3c9ece204d936b35c76c71315f2
     name: splunk-operator
     urls:
     - https://daaain.github.io/splunk-operator/splunk-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2022-07-18T14:40:48.2070278Z"
+generated: "2022-07-18T15:39:36.022660045Z"
